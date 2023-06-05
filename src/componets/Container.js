@@ -1,11 +1,14 @@
 import React, { useEffect } from "react"
+import Section from "./Section"
 import '../styles/container.css'
 
 function Container() {
   return (
-    <>
-      This is the container
-    </>
+    <div className="box">
+      <Section vechicle="Sedan"/>
+      <Section vechicle="SUVs"/>
+      <Section vechicle="Luxary"/>
+    </div>
   )
 }
 
