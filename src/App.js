@@ -1,9 +1,10 @@
-
+import Container from "./componets/Container";
+import './styles/app.css'
 function App() {
   return (
-    <>
-      Hello
-    </>
+    <div className="outer">
+      <Container/>
+    </div>
   );
 }
 
