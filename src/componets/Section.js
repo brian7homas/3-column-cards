@@ -6,7 +6,7 @@ function Section(props) {
       className="section section--outer"
       style={{'backgroundColor': `${props.bgColor}`}}
       >
-      {props.vehicle}
+        style={{color: `${props.bgColor}`}}
     </section>
   )
 }
