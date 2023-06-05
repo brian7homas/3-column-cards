@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Big Shoulder Display';
+  src: url('../assets/fonts/BigShouldersDisplay-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('../assets/fonts/LexendDeca-VariableFont_wght.ttf') format('truetype');
+}
 .outer{
   display:flex;
   justify-content: center;
