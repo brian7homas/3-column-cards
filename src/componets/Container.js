@@ -5,9 +5,18 @@ import '../styles/container.css'
 function Container() {
   return (
     <div className="box">
-      <Section vechicle="Sedan"/>
-      <Section vechicle="SUVs"/>
-      <Section vechicle="Luxary"/>
+      <Section 
+        vechicle="Sedan"
+        bgColor="hsl(31, 77%, 52%)"
+      />
+      <Section 
+        vechicle="SUVs"
+        bgColor="hsl(184, 100%, 22%)"
+        />
+      <Section 
+        vechicle="Luxary"
+        bgColor="hsl(179, 100%, 13%)"
+      />
     </div>
   )
 }
