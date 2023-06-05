@@ -6,15 +6,15 @@ function Container() {
   return (
     <div className="box">
       <Section 
-        vechicle="Sedan"
+        vehicle="Sedan"
         bgColor="hsl(31, 77%, 52%)"
       />
       <Section 
-        vechicle="SUVs"
+        vehicle="SUVs"
         bgColor="hsl(184, 100%, 22%)"
         />
       <Section 
-        vechicle="Luxary"
+        vehicle="Luxary"
         bgColor="hsl(179, 100%, 13%)"
       />
     </div>
