@@ -23,4 +23,25 @@
   padding: .95rem 1.8rem;
   border:none;
   border-radius: 30px;
+  position: relative;
+  overflow:hidden;
+  cursor: pointer;
+}
+.section--text{
+  position: relative;
+  z-index: 2;
+}
+.section--hover{
+  z-index:0;
+  top:-2em;
+  position:absolute;
+  height: 0;
+  min-width: 0;
+  background-color: hsl(31, 77%, 68%);
+}
+.section--click{
+  position:absolute;
+  bottom: -2em;
+  right:1.1em;
+  z-index: 1;
 }
