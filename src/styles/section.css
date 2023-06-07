@@ -26,6 +26,7 @@
   overflow:hidden;
   cursor: pointer;
   z-index: 2;
+  opacity:.99;
 }
 .section--text{
   position: relative;
@@ -40,7 +41,7 @@
 }
 .section--click{
   position:absolute;
-  bottom: -2.5em;
+  bottom: -3em;
   right:1.1em;
   z-index: 1;
   opacity: .65;
