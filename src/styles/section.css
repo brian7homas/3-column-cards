@@ -1,10 +1,9 @@
-.section--outer{
-  padding: 47px 50px;
-  width: 213px;
-}
 .section{
   color:hsla(0, 0%, 100%, 0.75);
   font-family: 'Lexend Deca';
+  padding: 47px 50px;
+  width: 213px;
+  flex-grow:1;
 }
 .section--vehicle{
   color: hsl(0, 0%, 95%);
