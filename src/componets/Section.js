@@ -71,20 +71,24 @@ function Section(props) {
       className="section"
       style={{'backgroundColor': `${props.bgColor}`}}
       >
-      <div>{props.icon}</div>
-      <h1 className="section--vehicle">{props.vehicle}</h1>
-      <p className="section--copy">{props.copy}</p>
-      <button 
-        onMouseEnter={() => tl.play()}
-        onMouseLeave={() => tl.reverse()}
-        onClick={() => tl.play()}
-        className={`section--button section--button-${props.vehicle.toLowerCase()}`}
-        style={{color: `${props.bgColor}`}}
-      >
-      <div className={`section--text section--text-${props.vehicle}`}>Learn More</div>
-      <div className={`section--hover section--hover-${props.vehicle.toLowerCase()}`} style={{'backgroundColor': `${props.hover}`}}></div>
-      <div className={`section--click section--click-${props.vehicle}`}>{props.btnIcon}</div>
-      </button>
+      <header>
+        <div>{props.icon}</div>
+        <h1 className="section--vehicle">{props.vehicle}</h1>
+      </header>
+      <main>
+        <p className="section--copy">{props.copy}</p>
+        <button 
+          onMouseEnter={() => tl.play()}
+          onMouseLeave={() => tl.reverse()}
+          onClick={() => tl.play()}
+          className={`section--button section--button-${props.vehicle.toLowerCase()}`}
+          style={{color: `${props.bgColor}`}}
+        >
+        <div className={`section--text section--text-${props.vehicle}`}>Learn More</div>
+        <div className={`section--hover section--hover-${props.vehicle.toLowerCase()}`} style={{'backgroundColor': `${props.hover}`}}></div>
+        <div className={`section--click section--click-${props.vehicle}`}>{props.btnIcon}</div>
+        </button>
+      </main>
     </section>
   )
 }
