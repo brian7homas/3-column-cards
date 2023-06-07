@@ -3,8 +3,43 @@ import gsap from 'gsap'
 import '../styles/section.css'
 function Section(props) {
   let tl
-  useEffect(() => {
-    tl = gsap.timeline({ paused: true })
+  const checkDevice = ()=> {
+    if (navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i)) {
+      loadAnimation(true)
+      } else{
+        return loadAnimation(false)
+      }
+    
+  }
+  const loadAnimation = (a)=> {
+    if(a){
+      tl = gsap.timeline({ paused: true })
+      .to(`.section--hover-${props.vehicle.toLowerCase()}`,
+        {
+          top: '0em',
+          scale: 2,
+          height: '100%',
+          minWidth: '100%'
+        })
+      .to(`.section--text-${props.vehicle}`, {
+        color: 'hsl(0, 0%, 95%)'
+      }, '<')
+      .to(`.section--click-${props.vehicle}`,
+        {
+          bottom: '-.9em',
+          scale: '1.5',
+          onComplete: () => {
+            tl.invalidate()
+          }
+        }, '<')
+    }else {
+      tl = gsap.timeline({ paused: true })
       .to(`.section--hover-${props.vehicle.toLowerCase()}`,
         {
           top: '0em',
@@ -24,10 +59,16 @@ function Section(props) {
             tl.invalidate()
           }
         })
+    
+    }
+  }
+  
+  useEffect(() => {
+    checkDevice()
   }, [])
   return (
     <section 
-      className="section section--outer"
+      className="section"
       style={{'backgroundColor': `${props.bgColor}`}}
       >
       <div>{props.icon}</div>
