@@ -5,18 +5,18 @@ function Section(props) {
   let tl
   useEffect(() => {
     tl = gsap.timeline({ paused: true })
-      .to('.section--hover',
+      .to(`.section--hover-${props.vehicle.toLowerCase()}`,
         {
           top: '0em',
           scale: 2,
           height: '100%',
           minWidth: '100%'
         })
-      .to('.section--text', {
+      .to(`.section--text-${props.vehicle}`, {
         color: 'hsl(0, 0%, 95%)'
       }, '<')
       .addPause()
-      .to('.section--click',
+      .to(`.section--click-${props.vehicle}`,
         {
           bottom: '-.9em',
           scale: '1.5',
@@ -25,7 +25,6 @@ function Section(props) {
           }
         })
   }, [])
-  
   return (
     <section 
       className="section section--outer"
@@ -38,12 +37,12 @@ function Section(props) {
         onMouseEnter={() => tl.play()}
         onMouseLeave={() => tl.reverse()}
         onClick={() => tl.play()}
-        className="section--button section--button-sedan"
+        className={`section--button section--button-${props.vehicle.toLowerCase()}`}
         style={{color: `${props.bgColor}`}}
       >
-      <div className="section--text">Learn More</div>
-      <div className="section--hover"></div>
-      <div className="section--click">{props.btnIcon}</div>
+      <div className={`section--text section--text-${props.vehicle}`}>Learn More</div>
+      <div className={`section--hover section--hover-${props.vehicle.toLowerCase()}`} style={{'backgroundColor': `${props.hover}`}}></div>
+      <div className={`section--click section--click-${props.vehicle}`}>{props.btnIcon}</div>
       </button>
     </section>
   )
