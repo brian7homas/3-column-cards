@@ -75,7 +75,7 @@ function Section(props) {
         <div>{props.icon}</div>
         <h1 className="section--vehicle">{props.vehicle}</h1>
       </header>
-      <main>
+      <aside>
         <p className="section--copy">{props.copy}</p>
         <button 
           onMouseEnter={() => tl.play()}
@@ -88,7 +88,7 @@ function Section(props) {
         <div className={`section--hover section--hover-${props.vehicle.toLowerCase()}`} style={{'backgroundColor': `${props.hover}`}}></div>
         <div className={`section--click section--click-${props.vehicle}`}>{props.btnIcon}</div>
         </button>
-      </main>
+      </aside>
     </section>
   )
 }

@@ -59,7 +59,7 @@ const data =
 ]
 function Container() {
   return (
-    <div className="box">
+    <main className="box">
       {
         data.map((item, i) => {
           return(
@@ -75,7 +75,7 @@ function Container() {
           )
         })
       }
-    </div>
+    </main>
   )
 }
 
