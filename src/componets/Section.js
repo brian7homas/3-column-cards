@@ -1,6 +1,31 @@
 import React, { useEffect } from "react"
+import gsap from 'gsap'
 import '../styles/section.css'
 function Section(props) {
+  let tl
+  useEffect(() => {
+    tl = gsap.timeline({ paused: true })
+      .to('.section--hover',
+        {
+          top: '0em',
+          scale: 2,
+          height: '100%',
+          minWidth: '100%'
+        })
+      .to('.section--text', {
+        color: 'hsl(0, 0%, 95%)'
+      }, '<')
+      .addPause()
+      .to('.section--click',
+        {
+          bottom: '-.9em',
+          scale: '1.5',
+          onComplete: () => {
+            tl.invalidate()
+          }
+        })
+  }, [])
+  
   return (
     <section 
       className="section section--outer"
@@ -10,9 +35,16 @@ function Section(props) {
       <h1 className="section--vehicle">{props.vehicle}</h1>
       <p className="section--copy">{props.copy}</p>
       <button 
-        className="section--button"
+        onMouseEnter={() => tl.play()}
+        onMouseLeave={() => tl.reverse()}
+        onClick={() => tl.play()}
+        className="section--button section--button-sedan"
         style={{color: `${props.bgColor}`}}
-      >Learn More</button>
+      >
+      <div className="section--text">Learn More</div>
+      <div className="section--hover"></div>
+      <div className="section--click">{props.btnIcon}</div>
+      </button>
     </section>
   )
 }
